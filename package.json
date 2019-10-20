@@ -1,0 +1,9 @@
+{
+  "name": "votely",
+  "version": "0.0.1",
+  "description": "Make a difference! Ask the community for their opinion, real time!",
+  "main": "index.js",
+  "repository": "git@github.com:modernweb-pl/votely.git",
+  "author": "ModernWeb <biuro@modernweb.pl>",
+  "license": "MIT"
+}
