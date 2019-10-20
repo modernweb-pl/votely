@@ -6,5 +6,37 @@
   "author": "ModernWeb <biuro@modernweb.pl>",
   "license": "MIT",
   "private": true,
-  "workspaces": ["client", "server"]
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "format": "prettier --write '**/*.{js,scss,html,json}'",
+    "yarn:client": "yarn workspace @votely/client"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "lint-staged": {
+    "*.{js,html,scss,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2"
+  },
+  "engines": {
+    "node": ">=10.9.0",
+    "yarn": "^1.19.0"
+  }
 }
