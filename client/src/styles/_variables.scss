@@ -1,0 +1,16 @@
+/**
+ * This file aggregates all variables.
+ * It can be imported into component specific stylesheet.
+ *
+ * DON'T add any custom variables or overrides here.
+ * You can do it in `/variables/*.scss`.
+ */
+
+// Theme
+@import 'theme/colors';
+@import 'theme/variables';
+
+// Bootstrap
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
