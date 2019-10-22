@@ -9,6 +9,7 @@ module.exports = merge.smartStrategy({ 'module.rules.use': 'prepend' })(config, 
     contentBase: './dist',
     hot: true,
     port: 3000,
+    historyApiFallback: true,
   },
   module: {
     rules: [
