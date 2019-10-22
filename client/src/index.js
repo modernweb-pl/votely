@@ -10,4 +10,5 @@ if (module.hot) {
   module.hot.accept();
 }
 
+m.route.prefix = '';
 m.route(document.getElementById('root'), defaultRoute, routes);

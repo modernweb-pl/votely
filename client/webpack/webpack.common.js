@@ -11,13 +11,13 @@ module.exports = {
   tests,
   config: {
     context,
-    mode: 'production',
     entry: {
       app: './src/index.js',
     },
     output: {
       path: path.resolve(context, 'dist'),
       filename: '[name].[hash].js',
+      publicPath: '/',
     },
     module: {
       rules: [
