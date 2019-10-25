@@ -9,8 +9,8 @@ export class ProjectController {
   }
 
   @Get()
-  async getAll(): Promise<Project[]> {
-    return this.projectService.getAll();
+  async findAll(): Promise<Project[]> {
+    return this.projectService.findAll();
   }
 
   @Post()

@@ -1,23 +1,20 @@
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
 import { CreateProjectDto } from '../model/create-project.dto';
 import { Project } from '../model/project';
 
 @Injectable()
 export class ProjectService {
-  private readonly projects: Project[] = [];
+  constructor(@InjectModel('Project') private readonly model: Model<Project>) {}
 
-  create(project: CreateProjectDto) {
-    const res = {
-      id: this.projects.length + 1,
-      ...project,
-    };
+  async create(dto: CreateProjectDto): Promise<Project> {
+    const res = new this.model(dto);
 
-    this.projects.push(res);
-
-    return res;
+    return res.save();
   }
 
-  getAll(): Project[] {
-    return this.projects;
+  async findAll(): Promise<Project[]> {
+    return this.model.find().exec();
   }
 }
