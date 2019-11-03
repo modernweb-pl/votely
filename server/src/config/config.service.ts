@@ -16,7 +16,9 @@ export class ConfigService {
     }
 
     this.config = {
+      PORT: Number(out.parsed.PORT || 3001),
       MONGO_URI: out.parsed.MONGO_URI,
+      SESSION_SECRET: out.parsed.SESSION_SECRET,
     };
   }
 
@@ -26,7 +28,7 @@ export class ConfigService {
     return new ConfigService(path);
   }
 
-  get(key: keyof Config): string {
+  get(key: keyof Config): string | number {
     return this.config[key];
   }
 }
