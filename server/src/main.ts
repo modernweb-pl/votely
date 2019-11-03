@@ -8,6 +8,10 @@ import { ConfigService } from './config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors({
+    credentials: true,
+    origin: true,
+  });
 
   const configService: ConfigService = app.get(ConfigService);
 

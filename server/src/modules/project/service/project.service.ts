@@ -8,13 +8,14 @@ import { Project } from '../model/project';
 export class ProjectService {
   constructor(@InjectModel('Project') private readonly model: Model<Project>) {}
 
-  async create(dto: CreateProjectDto): Promise<Project> {
-    const res = new this.model(dto);
+  async create(userId: string, dto: CreateProjectDto): Promise<Project> {
+    const filter = { userId };
+    const doc = { userId, ...dto };
 
-    return res.save();
+    return this.model.findOneAndUpdate(filter, doc, { new: true, upsert: true });
   }
 
-  async findAll(): Promise<Project[]> {
-    return this.model.find().exec();
+  async find(userId: string): Promise<Project> {
+    return this.model.findOne({ userId }).lean();
   }
 }

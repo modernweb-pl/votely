@@ -14,6 +14,7 @@ import { ProjectModule } from './modules/project/project.module';
         uri: configService.get('MONGO_URI'),
         useNewUrlParser: true,
         useUnifiedTopology: true,
+        useFindAndModify: false,
       }),
     }),
     ProjectModule,
