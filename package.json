@@ -11,7 +11,7 @@
     "server"
   ],
   "scripts": {
-    "format": "prettier --write '**/*.{js,scss,html,json}'",
+    "format": "prettier --write '**/*.{js,ts,html,scss,json}'",
     "client": "yarn workspace @votely/client",
     "server": "yarn workspace @votely/server"
   },
