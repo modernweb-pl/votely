@@ -5,11 +5,8 @@ import { ProjectController } from './project.controller';
 import { ProjectService } from './service/project.service';
 
 @Module({
-  imports: [
-    MongooseModule.forFeature([{ name: 'Project', schema: ProjectSchema }]),
-  ],
+  imports: [MongooseModule.forFeature([{ name: 'Project', schema: ProjectSchema }])],
   controllers: [ProjectController],
   providers: [ProjectService],
 })
-export class ProjectModule {
-}
+export class ProjectModule {}

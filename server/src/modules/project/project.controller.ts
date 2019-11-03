@@ -5,8 +5,7 @@ import { ProjectService } from './service/project.service';
 
 @Controller('projects')
 export class ProjectController {
-  constructor(private readonly projectService: ProjectService) {
-  }
+  constructor(private readonly projectService: ProjectService) {}
 
   @Get()
   async findAll(): Promise<Project[]> {
