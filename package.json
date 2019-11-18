@@ -6,15 +6,22 @@
   "author": "ModernWeb <biuro@modernweb.pl>",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "client",
-    "server"
-  ],
+  "workspaces": {
+    "packages": [
+      "client",
+      "client-vue",
+      "server"
+    ],
+    "nohoist": [
+      "**/@vue/cli-service"
+    ]
+  },
   "scripts": {
     "format": "prettier --write '**/*.{js,ts,html,scss,json}'",
     "client": "yarn workspace @votely/client",
+    "client:vue": "yarn workspace @votely/client-vue",
     "server": "yarn workspace @votely/server",
-    "start": "concurrently -k 'yarn:server start:dev' 'yarn:client start'"
+    "start": "concurrently -k 'yarn:server start:dev' 'yarn:client start' 'yarn:client:vue serve'"
   },
   "prettier": {
     "printWidth": 100,
