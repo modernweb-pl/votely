@@ -1,6 +1,6 @@
 import m from 'mithril';
 import { Projects } from '../models/project';
-import { ProjectQuestion } from './question';
+import { QuestionItem } from '../../question/item';
 
 export const ProjectEditPage = {
   oninit() {
@@ -25,9 +25,12 @@ export const ProjectEditPage = {
         { class: 'container' },
         m('div', { class: 'text-center' }, [
           m('h1', 'Votely'),
-          m('h3', `Title: ${Projects.current.title}`),
+          m('h3', [
+            `Title: ${Projects.current.title} `,
+            m(m.route.Link, { class: 'btn btn-sm btn-info', href: '/project/create' }, 'edit'),
+          ]),
         ]),
-        ['1', '2'].map(q => m(ProjectQuestion)),
+        Projects.current.questions.map(q => m(QuestionItem)),
         m('div', { class: 'text-center' }, [
           m(
             'button',

@@ -16,6 +16,6 @@ export class ProjectService {
   }
 
   async find(userId: string): Promise<Project> {
-    return this.model.findOne({ userId }).lean();
+    return this.model.findOne({ userId }).exec();
   }
 }

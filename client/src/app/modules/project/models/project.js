@@ -5,7 +5,7 @@ export const Projects = {
 
   load() {
     return m
-      .request({ url: 'http://localhost:3001/projects', withCredentials: true })
+      .request({ url: 'http://localhost:3001/project', withCredentials: true })
       .then(project => (Projects.current = project));
   },
 
@@ -13,7 +13,7 @@ export const Projects = {
     return m
       .request({
         method: 'POST',
-        url: 'http://localhost:3001/projects',
+        url: 'http://localhost:3001/project',
         withCredentials: true,
         body: project,
       })

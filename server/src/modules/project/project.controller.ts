@@ -3,12 +3,12 @@ import { CreateProjectDto } from './model/create-project.dto';
 import { Project } from './model/project';
 import { ProjectService } from './service/project.service';
 
-@Controller('projects')
+@Controller('project')
 export class ProjectController {
   constructor(private readonly service: ProjectService) {}
 
   @Get()
-  async findAll(@Session() session: Express.Session): Promise<Project> {
+  async find(@Session() session: Express.Session): Promise<Project> {
     return this.service.find(session.id);
   }
 

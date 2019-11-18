@@ -1,6 +1,6 @@
 import m from 'mithril';
 
-export const ProjectQuestion = {
+export const QuestionItem = {
   view() {
     return m('div', { class: 'card mb-3' }, [
       m('div', { class: 'card-header d-flex align-items-center' }, [
