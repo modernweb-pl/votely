@@ -1,10 +1,10 @@
-import { VoteCreate } from './app/modules/vote/views/create';
+import { ProjectCreatePage, ProjectEditPage } from './app/modules/project';
 import { Home } from './app/pages/home';
 
 export const defaultRoute = '/';
 
 export const routes = {
   '/': Home,
-  '/create': VoteCreate,
-  '/create/:id': VoteCreate,
+  '/project': ProjectEditPage,
+  '/project/create': ProjectCreatePage,
 };

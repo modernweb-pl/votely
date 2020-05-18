@@ -34,7 +34,7 @@ export const PinForm = {
             oninput(e) {
               PinForm.pin = parseInt(e.target.value);
             },
-          })
+          }),
         ),
         formGroup(
           m(
@@ -44,10 +44,10 @@ export const PinForm = {
               type: 'submit',
               value: 'Submit',
             },
-            'Enter'
-          )
+            'Enter',
+          ),
         ),
-      ]
+      ],
     );
   },
 };
@@ -67,12 +67,12 @@ export const Home = {
           m(
             m.route.Link,
             {
-              href: '/create',
+              href: '/project',
             },
-            'Create vote session'
+            'Create vote session',
           ),
         ]),
-      ]
+      ],
     );
   },
 };
